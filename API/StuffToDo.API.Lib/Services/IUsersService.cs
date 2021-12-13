@@ -18,11 +18,5 @@ namespace StuffToDo.API.Lib.Services
         /// </summary>
         /// <returns></returns>
         Task<Result<string>> SignIn(SignInRequest request);
-
-        ///// <summary>
-        ///// Validates the token.
-        ///// </summary>
-        ///// <returns></returns>
-        //Task<Result<bool>> IsTokenValid(SignInRequest request);
     }
 }

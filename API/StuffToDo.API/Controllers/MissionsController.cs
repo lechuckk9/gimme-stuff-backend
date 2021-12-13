@@ -70,16 +70,6 @@ namespace StuffToDo.API.Controllers
         /// </summary>
         /// <returns>Authentication token</returns>
         /// <exception cref="UnauthorizedResult">Unauthorized</exception>
-        [HttpGet("paged")]
-        public async Task<ActionResult<Mission[]>> GetAllMissionsNoPage()
-        {
-            return Ok(new ApiResponse<Mission[]>(await _missionService.ReadAll()));
-        }
-
-        /// <summary>
-        /// </summary>
-        /// <returns>Authentication token</returns>
-        /// <exception cref="UnauthorizedResult">Unauthorized</exception>
         [HttpGet]
         public async Task<ActionResult<Mission[]>> GetAllMissions([FromQuery] PagedRequest pagedRequest)
         {

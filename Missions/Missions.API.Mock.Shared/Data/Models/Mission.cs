@@ -55,5 +55,17 @@ namespace Missions.API.Mock.Shared.Data.Models
         /// </summary>
         [DataMember(IsRequired = false)]
         public int? UserAuthor { get; set; }
+
+        /// <summary>
+        /// Task's type.
+        /// </summary>
+        [DataMember(IsRequired = false)]
+        public string TypeString { get => Type.ToString(); }
+
+        /// <summary>
+        /// Task's state.
+        /// </summary>
+        [DataMember(IsRequired = false)]
+        public string StateString { get => State.ToString(); }
     }
 }

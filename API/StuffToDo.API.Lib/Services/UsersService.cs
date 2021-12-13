@@ -2,9 +2,6 @@
 using Missions.Common.Lib.Exceptions;
 using StuffToDo.API.Lib.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Users.API.Mock.Shared.Services.Authentication;
 

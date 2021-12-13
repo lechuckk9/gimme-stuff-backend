@@ -12,7 +12,7 @@ namespace Users.API.Mock.Shared.Services.Authentication
     public interface IAuthenticationService
     {
         /// <summary>
-        /// Authenticates the user and returns a token
+        /// Authenticates the user and returns a token.
         /// </summary>
         /// <param name="username">Username</param>
         /// <param name="password">Password</param>
