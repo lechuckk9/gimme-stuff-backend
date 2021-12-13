@@ -59,6 +59,22 @@ namespace StuffToDo.API
                 };
             });
 
+            services.AddCors(o =>
+            {
+                o.AddPolicy
+                (
+                    "MyCorsPolicy",
+                    b => b.WithOrigins
+                    (
+                        "http://localhost:4200",
+                        "localhost:4200"
+                    )
+                    .AllowAnyHeader()
+                    .AllowAnyMethod()
+                    .AllowCredentials()
+                );
+            });
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "StuffToDo.API", Version = "v1" });
@@ -82,7 +98,7 @@ namespace StuffToDo.API
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            app.UseCors("MyCorsPolicy");
             app.UseAuthentication();
             app.UseAuthorization();
 
