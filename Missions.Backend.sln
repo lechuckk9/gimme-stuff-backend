@@ -3,17 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StuffToDo.PublicAPI", "PublicAPI\StuffToDo.PublicAPI\StuffToDo.PublicAPI.csproj", "{7D55238F-F370-415E-B13B-42C3EA2DE763}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Users", "Users", "{5193E096-9328-435F-9951-8D61DBC9F564}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StuffToDo.PublicAPI.Lib", "PublicAPI\StuffToDo.PublicAPI.Lib\StuffToDo.PublicAPI.Lib.csproj", "{5CE3BE58-B9C2-402E-984F-DAC7F9B7779A}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Commons", "Commons", "{18EF06B4-B82D-4B43-B98F-F2D69EEE6EE8}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StuffToDo.PublicAPI.Tests", "PublicAPI\StuffToDo.PublicAPI.Tests\StuffToDo.PublicAPI.Tests.csproj", "{394EFFD4-D20A-4526-AC0F-A667DD60948C}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublicAPI", "PublicAPI", "{C6FE0DE7-4A2E-4EE2-8EE8-D9025713C4A6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Missions", "Missions", "{2480C333-4252-4461-9232-34AC7F5EFC98}"
 EndProject
