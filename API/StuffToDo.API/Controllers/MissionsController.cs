@@ -1,17 +1,17 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Missions.API.Mock.Shared.Data.Models;
 using Missions.Common.API.Models;
 using StuffToDo.API.Lib.Services;
 using StuffToDo.API.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace StuffToDo.API.Controllers
 {
+    [EnableCors("MyCorsPolicy")]
     [Authorize]
     [Route("api/[controller]")]
     [ApiController]
