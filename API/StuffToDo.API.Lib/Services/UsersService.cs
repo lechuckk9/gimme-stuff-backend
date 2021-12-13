@@ -11,7 +11,7 @@ using Users.API.Mock.Shared.Services.Authentication;
 namespace StuffToDo.API.Lib.Services
 {
     /// <inheritdoc/>
-    public class UsersService : IUserService
+    public class UsersService : IUsersService
     {
         /// <summary>
         /// Constructor.

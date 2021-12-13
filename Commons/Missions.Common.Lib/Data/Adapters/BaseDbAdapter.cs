@@ -1,46 +1,143 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Common;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Dapper;
 
 namespace Missions.Common.Lib.Data.Adapters
 {
     /// <inheritdoc/>
-    public class BaseDbAdapter<T> : IBaseDbAdapter<T>
+    public class BaseDbAdapter : IBaseDbAdapter
     {
-        // TODO how will T be handled and saved to db? - map with Dapper
-        // TODO add sql command, transaction, etc.
-
-
-        /// <inheritdoc
-        public T Create(T data)
+        /// <inheritdoc/>
+        public bool Execute(string sp, DynamicParameters parms, CommandType commandType = CommandType.StoredProcedure)
         {
-            throw new NotImplementedException();
+            int result;
+            using IDbConnection db = new SqlConnection(_ConnectionString);
+            try
+            {
+                if (db.State == ConnectionState.Closed)
+                    db.Open();
+
+                using var tran = db.BeginTransaction();
+                try
+                {
+                    result = db.Execute(sp, parms, commandType: commandType, transaction: tran);
+                    tran.Commit();
+                }
+                catch (Exception ex)
+                {
+                    tran.Rollback();
+                    throw ex;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (db.State == ConnectionState.Open)
+                    db.Close();
+            }
+
+            return result > 0;
         }
 
-        /// <inheritdoc
-        public bool Delete(int id)
+        /// <inheritdoc/>
+        public T Get<T>(string sp, DynamicParameters parms, CommandType commandType = CommandType.StoredProcedure)
         {
-            throw new NotImplementedException();
+            using IDbConnection db = new SqlConnection(_ConnectionString);
+            return db.Query<T>(sp, parms, commandType: commandType).FirstOrDefault();
         }
 
-        /// <inheritdoc
-        public T Read(int id)
+        /// <inheritdoc/>
+        public List<T> GetAll<T>(string sp, DynamicParameters parms, CommandType commandType = CommandType.StoredProcedure)
         {
-            throw new NotImplementedException();
+            using IDbConnection db = new SqlConnection(_ConnectionString);
+            return db.Query<T>(sp, parms, commandType: commandType).ToList();
         }
 
-        /// <inheritdoc
-        public T[] ReadAll()
+        /// <inheritdoc/>
+        public bool Insert(string sp, DynamicParameters parms, CommandType commandType = CommandType.StoredProcedure)
         {
-            throw new NotImplementedException();
+            int result;
+            using IDbConnection db = new SqlConnection(_ConnectionString);
+            try
+            {
+                if (db.State == ConnectionState.Closed)
+                    db.Open();
+
+                using var tran = db.BeginTransaction();
+                try
+                {
+                    result = db.Execute(sp, parms, commandType: commandType, transaction: tran);
+                    tran.Commit();
+                }
+                catch (Exception ex)
+                {
+                    tran.Rollback();
+                    throw ex;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (db.State == ConnectionState.Open)
+                    db.Close();
+            }
+
+            return result > 0;
         }
 
-        /// <inheritdoc
-        public T Update(T data)
+        /// <inheritdoc/>
+        public bool Update(string sp, DynamicParameters parms, CommandType commandType = CommandType.StoredProcedure)
         {
-            throw new NotImplementedException();
+            int result;
+            using IDbConnection db = new SqlConnection(_ConnectionString);
+            try
+            {
+                if (db.State == ConnectionState.Closed)
+                    db.Open();
+
+                using var tran = db.BeginTransaction();
+                try
+                {
+                    result = db.Execute(sp, parms, commandType: commandType, transaction: tran);
+                    tran.Commit();
+                }
+                catch (Exception ex)
+                {
+                    tran.Rollback();
+                    throw ex;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (db.State == ConnectionState.Open)
+                    db.Close();
+            }
+
+            return result > 0;
         }
+
+        /// <inheritdoc/>
+        public DbConnection GetDbconnection() => new SqlConnection(_ConnectionString);
+
+        #region Fields
+        // HACK load from appSettings
+        const string _ConnectionString = "Server=N1NWPLSK12SQL-v03.shr.prod.ams1.secureserver.net;Database=stuff_to_do;user id=todoadmin;password=odoffutsfoTolA12";
+        #endregion
     }
 }

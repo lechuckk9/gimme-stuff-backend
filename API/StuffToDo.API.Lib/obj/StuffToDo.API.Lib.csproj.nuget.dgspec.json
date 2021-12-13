@@ -1,41 +1,39 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Development\\Projects\\Tasks\\Tasks.Backend\\API\\StuffToDo.API.Lib\\StuffToDo.API.Lib.csproj": {}
+    "/Users/lechuckk/Development/Projects/Web/GimmeStuff 1/gimme-stuff-backend-old/API/StuffToDo.API.Lib/StuffToDo.API.Lib.csproj": {}
   },
   "projects": {
-    "C:\\Development\\Projects\\Tasks\\Tasks.Backend\\API\\StuffToDo.API.Lib\\StuffToDo.API.Lib.csproj": {
+    "/Users/lechuckk/Development/Projects/Web/GimmeStuff 1/gimme-stuff-backend-old/API/StuffToDo.API.Lib/StuffToDo.API.Lib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Development\\Projects\\Tasks\\Tasks.Backend\\API\\StuffToDo.API.Lib\\StuffToDo.API.Lib.csproj",
+        "projectUniqueName": "/Users/lechuckk/Development/Projects/Web/GimmeStuff 1/gimme-stuff-backend-old/API/StuffToDo.API.Lib/StuffToDo.API.Lib.csproj",
         "projectName": "StuffToDo.API.Lib",
-        "projectPath": "C:\\Development\\Projects\\Tasks\\Tasks.Backend\\API\\StuffToDo.API.Lib\\StuffToDo.API.Lib.csproj",
-        "packagesPath": "C:\\Users\\ArielDavidJ\\.nuget\\packages\\",
-        "outputPath": "C:\\Development\\Projects\\Tasks\\Tasks.Backend\\API\\StuffToDo.API.Lib\\obj\\",
+        "projectPath": "/Users/lechuckk/Development/Projects/Web/GimmeStuff 1/gimme-stuff-backend-old/API/StuffToDo.API.Lib/StuffToDo.API.Lib.csproj",
+        "packagesPath": "/Users/lechuckk/.nuget/packages/",
+        "outputPath": "/Users/lechuckk/Development/Projects/Web/GimmeStuff 1/gimme-stuff-backend-old/API/StuffToDo.API.Lib/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ArielDavidJ\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/lechuckk/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Development\\Projects\\Tasks\\Tasks.Backend\\Commons\\Missions.Common.API\\Missions.Common.API.csproj": {
-                "projectPath": "C:\\Development\\Projects\\Tasks\\Tasks.Backend\\Commons\\Missions.Common.API\\Missions.Common.API.csproj"
+              "/Users/lechuckk/Development/Projects/Web/GimmeStuff 1/gimme-stuff-backend-old/Commons/Missions.Common.API/Missions.Common.API.csproj": {
+                "projectPath": "/Users/lechuckk/Development/Projects/Web/GimmeStuff 1/gimme-stuff-backend-old/Commons/Missions.Common.API/Missions.Common.API.csproj"
               },
-              "C:\\Development\\Projects\\Tasks\\Tasks.Backend\\Missions\\Missions.API.Mock.Shared\\Missions.API.Mock.Shared.csproj": {
-                "projectPath": "C:\\Development\\Projects\\Tasks\\Tasks.Backend\\Missions\\Missions.API.Mock.Shared\\Missions.API.Mock.Shared.csproj"
+              "/Users/lechuckk/Development/Projects/Web/GimmeStuff 1/gimme-stuff-backend-old/Missions/Missions.API.Mock.Shared/Missions.API.Mock.Shared.csproj": {
+                "projectPath": "/Users/lechuckk/Development/Projects/Web/GimmeStuff 1/gimme-stuff-backend-old/Missions/Missions.API.Mock.Shared/Missions.API.Mock.Shared.csproj"
               },
-              "C:\\Development\\Projects\\Tasks\\Tasks.Backend\\Users\\Users.API.Mock.Shared\\Users.API.Mock.Shared.csproj": {
-                "projectPath": "C:\\Development\\Projects\\Tasks\\Tasks.Backend\\Users\\Users.API.Mock.Shared\\Users.API.Mock.Shared.csproj"
+              "/Users/lechuckk/Development/Projects/Web/GimmeStuff 1/gimme-stuff-backend-old/Users/Users.API.Mock.Shared/Users.API.Mock.Shared.csproj": {
+                "projectPath": "/Users/lechuckk/Development/Projects/Web/GimmeStuff 1/gimme-stuff-backend-old/Users/Users.API.Mock.Shared/Users.API.Mock.Shared.csproj"
               }
             }
           }
@@ -64,36 +62,34 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.100/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Development\\Projects\\Tasks\\Tasks.Backend\\Commons\\Missions.Common.API\\Missions.Common.API.csproj": {
+    "/Users/lechuckk/Development/Projects/Web/GimmeStuff 1/gimme-stuff-backend-old/Commons/Missions.Common.API/Missions.Common.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Development\\Projects\\Tasks\\Tasks.Backend\\Commons\\Missions.Common.API\\Missions.Common.API.csproj",
+        "projectUniqueName": "/Users/lechuckk/Development/Projects/Web/GimmeStuff 1/gimme-stuff-backend-old/Commons/Missions.Common.API/Missions.Common.API.csproj",
         "projectName": "Missions.Common.API",
-        "projectPath": "C:\\Development\\Projects\\Tasks\\Tasks.Backend\\Commons\\Missions.Common.API\\Missions.Common.API.csproj",
-        "packagesPath": "C:\\Users\\ArielDavidJ\\.nuget\\packages\\",
-        "outputPath": "C:\\Development\\Projects\\Tasks\\Tasks.Backend\\Commons\\Missions.Common.API\\obj\\",
+        "projectPath": "/Users/lechuckk/Development/Projects/Web/GimmeStuff 1/gimme-stuff-backend-old/Commons/Missions.Common.API/Missions.Common.API.csproj",
+        "packagesPath": "/Users/lechuckk/.nuget/packages/",
+        "outputPath": "/Users/lechuckk/Development/Projects/Web/GimmeStuff 1/gimme-stuff-backend-old/Commons/Missions.Common.API/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ArielDavidJ\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/lechuckk/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Development\\Projects\\Tasks\\Tasks.Backend\\Commons\\Missions.Common.Lib\\Missions.Common.Lib.csproj": {
-                "projectPath": "C:\\Development\\Projects\\Tasks\\Tasks.Backend\\Commons\\Missions.Common.Lib\\Missions.Common.Lib.csproj"
+              "/Users/lechuckk/Development/Projects/Web/GimmeStuff 1/gimme-stuff-backend-old/Commons/Missions.Common.Lib/Missions.Common.Lib.csproj": {
+                "projectPath": "/Users/lechuckk/Development/Projects/Web/GimmeStuff 1/gimme-stuff-backend-old/Commons/Missions.Common.Lib/Missions.Common.Lib.csproj"
               }
             }
           }
@@ -122,28 +118,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.100/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Development\\Projects\\Tasks\\Tasks.Backend\\Commons\\Missions.Common.Lib\\Missions.Common.Lib.csproj": {
+    "/Users/lechuckk/Development/Projects/Web/GimmeStuff 1/gimme-stuff-backend-old/Commons/Missions.Common.Lib/Missions.Common.Lib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Development\\Projects\\Tasks\\Tasks.Backend\\Commons\\Missions.Common.Lib\\Missions.Common.Lib.csproj",
+        "projectUniqueName": "/Users/lechuckk/Development/Projects/Web/GimmeStuff 1/gimme-stuff-backend-old/Commons/Missions.Common.Lib/Missions.Common.Lib.csproj",
         "projectName": "Missions.Common.Lib",
-        "projectPath": "C:\\Development\\Projects\\Tasks\\Tasks.Backend\\Commons\\Missions.Common.Lib\\Missions.Common.Lib.csproj",
-        "packagesPath": "C:\\Users\\ArielDavidJ\\.nuget\\packages\\",
-        "outputPath": "C:\\Development\\Projects\\Tasks\\Tasks.Backend\\Commons\\Missions.Common.Lib\\obj\\",
+        "projectPath": "/Users/lechuckk/Development/Projects/Web/GimmeStuff 1/gimme-stuff-backend-old/Commons/Missions.Common.Lib/Missions.Common.Lib.csproj",
+        "packagesPath": "/Users/lechuckk/.nuget/packages/",
+        "outputPath": "/Users/lechuckk/Development/Projects/Web/GimmeStuff 1/gimme-stuff-backend-old/Commons/Missions.Common.Lib/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ArielDavidJ\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/lechuckk/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -161,6 +155,16 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.123, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -176,36 +180,34 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.100/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Development\\Projects\\Tasks\\Tasks.Backend\\Missions\\Missions.API.Mock.Shared\\Missions.API.Mock.Shared.csproj": {
+    "/Users/lechuckk/Development/Projects/Web/GimmeStuff 1/gimme-stuff-backend-old/Missions/Missions.API.Mock.Shared/Missions.API.Mock.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Development\\Projects\\Tasks\\Tasks.Backend\\Missions\\Missions.API.Mock.Shared\\Missions.API.Mock.Shared.csproj",
+        "projectUniqueName": "/Users/lechuckk/Development/Projects/Web/GimmeStuff 1/gimme-stuff-backend-old/Missions/Missions.API.Mock.Shared/Missions.API.Mock.Shared.csproj",
         "projectName": "Missions.API.Mock.Shared",
-        "projectPath": "C:\\Development\\Projects\\Tasks\\Tasks.Backend\\Missions\\Missions.API.Mock.Shared\\Missions.API.Mock.Shared.csproj",
-        "packagesPath": "C:\\Users\\ArielDavidJ\\.nuget\\packages\\",
-        "outputPath": "C:\\Development\\Projects\\Tasks\\Tasks.Backend\\Missions\\Missions.API.Mock.Shared\\obj\\",
+        "projectPath": "/Users/lechuckk/Development/Projects/Web/GimmeStuff 1/gimme-stuff-backend-old/Missions/Missions.API.Mock.Shared/Missions.API.Mock.Shared.csproj",
+        "packagesPath": "/Users/lechuckk/.nuget/packages/",
+        "outputPath": "/Users/lechuckk/Development/Projects/Web/GimmeStuff 1/gimme-stuff-backend-old/Missions/Missions.API.Mock.Shared/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ArielDavidJ\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/lechuckk/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Development\\Projects\\Tasks\\Tasks.Backend\\Commons\\Missions.Common.Lib\\Missions.Common.Lib.csproj": {
-                "projectPath": "C:\\Development\\Projects\\Tasks\\Tasks.Backend\\Commons\\Missions.Common.Lib\\Missions.Common.Lib.csproj"
+              "/Users/lechuckk/Development/Projects/Web/GimmeStuff 1/gimme-stuff-backend-old/Commons/Missions.Common.Lib/Missions.Common.Lib.csproj": {
+                "projectPath": "/Users/lechuckk/Development/Projects/Web/GimmeStuff 1/gimme-stuff-backend-old/Commons/Missions.Common.Lib/Missions.Common.Lib.csproj"
               }
             }
           }
@@ -234,28 +236,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.100/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Development\\Projects\\Tasks\\Tasks.Backend\\Users\\Users.API.Mock.Shared\\Users.API.Mock.Shared.csproj": {
+    "/Users/lechuckk/Development/Projects/Web/GimmeStuff 1/gimme-stuff-backend-old/Users/Users.API.Mock.Shared/Users.API.Mock.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Development\\Projects\\Tasks\\Tasks.Backend\\Users\\Users.API.Mock.Shared\\Users.API.Mock.Shared.csproj",
+        "projectUniqueName": "/Users/lechuckk/Development/Projects/Web/GimmeStuff 1/gimme-stuff-backend-old/Users/Users.API.Mock.Shared/Users.API.Mock.Shared.csproj",
         "projectName": "Users.API.Mock.Shared",
-        "projectPath": "C:\\Development\\Projects\\Tasks\\Tasks.Backend\\Users\\Users.API.Mock.Shared\\Users.API.Mock.Shared.csproj",
-        "packagesPath": "C:\\Users\\ArielDavidJ\\.nuget\\packages\\",
-        "outputPath": "C:\\Development\\Projects\\Tasks\\Tasks.Backend\\Users\\Users.API.Mock.Shared\\obj\\",
+        "projectPath": "/Users/lechuckk/Development/Projects/Web/GimmeStuff 1/gimme-stuff-backend-old/Users/Users.API.Mock.Shared/Users.API.Mock.Shared.csproj",
+        "packagesPath": "/Users/lechuckk/.nuget/packages/",
+        "outputPath": "/Users/lechuckk/Development/Projects/Web/GimmeStuff 1/gimme-stuff-backend-old/Users/Users.API.Mock.Shared/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ArielDavidJ\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/lechuckk/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -298,7 +298,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.100/RuntimeIdentifierGraph.json"
         }
       }
     }

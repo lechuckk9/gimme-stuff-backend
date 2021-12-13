@@ -1,5 +1,6 @@
 ﻿using Missions.API.Mock.Shared.Business;
 using System;
+using System.Threading.Tasks;
 
 namespace Missions.API.Mock.Shared.States
 {
@@ -12,31 +13,33 @@ namespace Missions.API.Mock.Shared.States
         public DoneMissionState(MissionContainer missionContainer) : base(missionContainer) { }
 
         /// <inheritdoc/>
-        public override EMissionStateType FinishMission()
+        public override async Task<EMissionStateType> FinishMission()
         {
-            Console.WriteLine("Mission is already in done state.");
-            throw new NotImplementedException();
+            return await Task.FromResult(_missionContainer.Mission.State);
         }
 
         /// <inheritdoc/>
-        public override EMissionStateType MoveToNextStep()
+        public override async Task<EMissionStateType> MoveToNextStep()
         {
-            Console.WriteLine("No previous state.");
-            throw new NotImplementedException();
+            return await Task.FromResult(_missionContainer.Mission.State);
         }
 
         /// <inheritdoc/>
-        public override EMissionStateType MoveToPreviousStep()
+        public override async Task<EMissionStateType> MoveToPreviousStep()
         {
-            Console.WriteLine("Mission was moved to in-progress state.");
-            throw new NotImplementedException();
+            _missionContainer.Mission.State = EMissionStateType.InProgress;
+            await _missionContainer._missionsDbAdapter.Update(_missionContainer.Mission);
+
+            return _missionContainer.Mission.State;
         }
 
         /// <inheritdoc/>
-        public override EMissionStateType ResetMission()
+        public override async Task<EMissionStateType> ResetMission()
         {
-            Console.WriteLine("Mission was moved to new state.");
-            throw new NotImplementedException();
+            _missionContainer.Mission.State = EMissionStateType.New;
+            await _missionContainer._missionsDbAdapter.Update(_missionContainer.Mission);
+
+            return _missionContainer.Mission.State;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Missions.API.Mock.Shared.Business;
+﻿using System.Threading.Tasks;
+using Missions.API.Mock.Shared.Business;
 
 namespace Missions.API.Mock.Shared.States
 {
@@ -17,28 +18,28 @@ namespace Missions.API.Mock.Shared.States
         /// Moves the Mission to <see cref="EStateType.New"/> state.
         /// </summary>
         /// <returns>New <see cref="EStateType"/> state.</returns>
-        public abstract EMissionStateType ResetMission();
+        public abstract Task<EMissionStateType> ResetMission();
 
         /// <summary>
         /// Moves the Mission to <see cref="EStateType.Done"/> state.
         /// </summary>
         /// <returns>New <see cref="EStateType"/> state.</returns>
-        public abstract EMissionStateType FinishMission();
+        public abstract Task<EMissionStateType> FinishMission();
 
         /// <summary>
         /// Moves the Mission to the appropriate <see cref="EStateType"/> state.
         /// </summary>
         /// <returns>New <see cref="EStateType"/> state.</returns>
-        public abstract EMissionStateType MoveToPreviousStep();
+        public abstract Task<EMissionStateType> MoveToPreviousStep();
 
         /// <summary>
         /// Moves the Mission to the appropriate <see cref="EStateType"/> state.
         /// </summary>
         /// <returns>New <see cref="EStateType"/> state.</returns>
-        public abstract EMissionStateType MoveToNextStep();
+        public abstract Task<EMissionStateType> MoveToNextStep();
 
         #region Fields
-        private MissionContainer _missionContainer;
+        protected MissionContainer _missionContainer;
         #endregion
     }
 }

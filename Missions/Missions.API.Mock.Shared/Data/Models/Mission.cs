@@ -30,7 +30,7 @@ namespace Missions.API.Mock.Shared.Data.Models
         /// Task's name.
         /// </summary>
         [DataMember(IsRequired = true)]
-        public string Name { get; set; }
+        public string Title { get; set; }
 
         /// <summary>
         /// Task's description.
@@ -48,7 +48,7 @@ namespace Missions.API.Mock.Shared.Data.Models
         /// Task's assignee.
         /// </summary>
         [DataMember(IsRequired = false)]
-        public int? UserAsignee { get; set; }
+        public int? UserAssignee { get; set; }
 
         /// <summary>
         /// Task's author.

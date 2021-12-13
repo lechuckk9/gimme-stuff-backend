@@ -10,12 +10,40 @@ namespace Missions.API.Mock.Shared.Data.Adapters
     /// <summary>
     /// Missions database adapter.
     /// </summary>
-    internal interface IMissionsDbAdapter
+    public interface IMissionsDbAdapter
     {
-        internal bool Create(Mission mission);
-        internal Mission Read(int missionId);
-        internal Mission[] ReadAll();
-        internal Mission Update(Mission mission);
-        internal bool Delete(Mission mission);
+        /// <summary>
+        /// Creates a new mission.
+        /// </summary>
+        /// <param name="mission"></param>
+        /// <returns></returns>
+        Task<bool> Create(Mission mission);
+
+        /// <summary>
+        /// Gets a mission.
+        /// </summary>
+        /// <param name="missionId"></param>
+        /// <returns></returns>
+        Task<Mission> Read(int missionId);
+
+        /// <summary>
+        /// Gets all missions.
+        /// </summary>
+        /// <returns></returns>
+        Task<Mission[]> ReadAll();
+
+        /// <summary>
+        /// Updates a mission.
+        /// </summary>
+        /// <param name="mission"></param>
+        /// <returns></returns>
+        Task<Mission> Update(Mission mission);
+
+        /// <summary>
+        /// Deletes a mission.
+        /// </summary>
+        /// <param name="mission"></param>
+        /// <returns></returns>
+        Task<bool> Delete(int missionId);
     }
 }

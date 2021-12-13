@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Development\\Projects\\Tasks\\Tasks.Backend\\Commons\\Missions.Common.Tests\\Missions.Common.Tests.csproj": {}
+    "/Users/lechuckk/Development/Projects/Web/GimmeStuff 1/gimme-stuff-backend-old/Commons/Missions.Common.Tests/Missions.Common.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Development\\Projects\\Tasks\\Tasks.Backend\\Commons\\Missions.Common.Tests\\Missions.Common.Tests.csproj": {
+    "/Users/lechuckk/Development/Projects/Web/GimmeStuff 1/gimme-stuff-backend-old/Commons/Missions.Common.Tests/Missions.Common.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Development\\Projects\\Tasks\\Tasks.Backend\\Commons\\Missions.Common.Tests\\Missions.Common.Tests.csproj",
+        "projectUniqueName": "/Users/lechuckk/Development/Projects/Web/GimmeStuff 1/gimme-stuff-backend-old/Commons/Missions.Common.Tests/Missions.Common.Tests.csproj",
         "projectName": "Missions.Common.Tests",
-        "projectPath": "C:\\Development\\Projects\\Tasks\\Tasks.Backend\\Commons\\Missions.Common.Tests\\Missions.Common.Tests.csproj",
-        "packagesPath": "C:\\Users\\ArielDavidJ\\.nuget\\packages\\",
-        "outputPath": "C:\\Development\\Projects\\Tasks\\Tasks.Backend\\Commons\\Missions.Common.Tests\\obj\\",
+        "projectPath": "/Users/lechuckk/Development/Projects/Web/GimmeStuff 1/gimme-stuff-backend-old/Commons/Missions.Common.Tests/Missions.Common.Tests.csproj",
+        "packagesPath": "/Users/lechuckk/.nuget/packages/",
+        "outputPath": "/Users/lechuckk/Development/Projects/Web/GimmeStuff 1/gimme-stuff-backend-old/Commons/Missions.Common.Tests/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ArielDavidJ\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/lechuckk/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -76,7 +74,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.100/RuntimeIdentifierGraph.json"
         }
       }
     }

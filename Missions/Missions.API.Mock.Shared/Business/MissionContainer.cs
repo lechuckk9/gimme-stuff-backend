@@ -1,4 +1,5 @@
-﻿using Missions.API.Mock.Shared.Data.Models;
+﻿using Missions.API.Mock.Shared.Data.Adapters;
+using Missions.API.Mock.Shared.Data.Models;
 using Missions.API.Mock.Shared.States;
 using System;
 using System.Collections.Generic;
@@ -11,54 +12,55 @@ namespace Missions.API.Mock.Shared.Business
     /// <summary>
     /// Container class for <see cref="Task"/> classes. Also manages their states.
     /// </summary>
-    public sealed class MissionContainer
+    public sealed class MissionContainer : IMissionContainer
     {
         /// <summary>
         /// Constructor for existing missions.
         /// </summary>
         /// <param name="mission"></param>
-        public MissionContainer(Mission mission)
+        public MissionContainer(Mission mission, IMissionsDbAdapter missionDbAdapter)
         {
             _mission = mission;
+            _missionsDbAdapter = missionDbAdapter;
             SetMissionState();
         }
 
-        /// <summary>
-        /// Default constructor; generates a new <see cref="Mission"/>.
-        /// </summary>
-        public MissionContainer() : this(new Mission()) { }
+        /// <inheritdoc/>
+        public MissionContainer(IMissionsDbAdapter missionDbAdapter) : this(new Mission(), missionDbAdapter) { }
 
-        /// <summary>
-        /// Moves the Mission to <see cref="EStateType.New"/> state.
-        /// </summary>
-        public void ResetMission()
+        /// <inheritdoc/>
+        public async Task ResetMission()
         {
-            _mission.State = _missionState.ResetMission();
+            _mission.State = await _missionState.ResetMission();
         }
 
-        /// <summary>
-        /// Moves the Mission to <see cref="EStateType.Done"/> state.
-        /// </summary>
-        public void FinishMission()
+        /// <inheritdoc/>
+        public async Task FinishMission()
         {
-            _mission.State = _missionState.FinishMission();
+            _mission.State = await _missionState.FinishMission();
         }
 
-        /// <summary>
-        /// Moves the Mission to the appropriate <see cref="EStateType"/> state.
-        /// </summary>
-        public void MoveToPreviousStep()
+        /// <inheritdoc/>
+        public async Task MoveToPreviousStep()
         {
-            _mission.State = _missionState.MoveToPreviousStep();
+            _mission.State = await _missionState.MoveToPreviousStep();
         }
 
-        /// <summary>
-        /// Moves the Mission to the appropriate <see cref="EStateType"/> state.
-        /// </summary>
-        public void MoveToNextStep()
+        /// <inheritdoc/>
+        public async Task MoveToNextStep()
         {
-            _mission.State = _missionState.MoveToNextStep();
+            _mission.State = await _missionState.MoveToNextStep();
         }
+
+        /// <inheritdoc/>
+        public async Task<bool> CreateNew(Mission mission) => await _missionsDbAdapter.Create(mission);
+
+
+        /// <inheritdoc/>
+        public async Task<Mission> Get(int missionId) => await _missionsDbAdapter.Read(missionId);
+
+        /// <inheritdoc/>
+        public async Task<Mission[]> GetAll() => await _missionsDbAdapter.ReadAll();
 
         private void SetMissionState()
         {
@@ -72,6 +74,7 @@ namespace Missions.API.Mock.Shared.Business
                 };
             }
         }
+
         #region Properies
         /// <summary>
         /// Mission's object.
@@ -82,6 +85,8 @@ namespace Missions.API.Mock.Shared.Business
         #region Fields
         private MissionState _missionState;
         private Mission _mission;
+
+        internal IMissionsDbAdapter _missionsDbAdapter;
         #endregion
     }
 }

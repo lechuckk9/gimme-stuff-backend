@@ -16,9 +16,9 @@ namespace StuffToDo.API.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        public UsersController(IUserService userService)
+        public UsersController(IUsersService usersService)
         {
-            _userService = userService;
+            _usersService = usersService;
         }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace StuffToDo.API.Controllers
         [HttpPost("signin")]
         public async Task<ActionResult<ApiResponse<Result<string>>>> SignIn([FromBody] SignInRequest request)
         {
-            var token = await _userService.SignIn(request);
+            var token = await _usersService.SignIn(request);
 
             if (token.Failed)
             {
@@ -52,7 +52,7 @@ namespace StuffToDo.API.Controllers
         }
 
         #region Services
-        private readonly IUserService _userService;
+        private readonly IUsersService _usersService;
         #endregion
     }
 }

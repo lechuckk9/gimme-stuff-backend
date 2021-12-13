@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pk4Li0wrFex3zuBRXTYqRwPcTFgEuCFeZaeeUlOCBrgknPZz8uvlNNj5gagy+yv8601TTkGC1WDsVC8RXwVOcA==",
+  "dgSpecHash": "DbaCdcUukraEhbSGNgUn0+hc9c1YDSFNepO3umgFCE3Wpj+CusNiXqxc4PEc+uQNhc0flN7pkhbmzFARrB8Xzg==",
   "success": true,
-  "projectFilePath": "C:\\Development\\Projects\\Tasks\\Tasks.Backend\\Commons\\Common.Resources\\Common.Resources.csproj",
+  "projectFilePath": "/Users/lechuckk/Development/Projects/Web/GimmeStuff 1/gimme-stuff-backend-old/Commons/Common.Resources/Common.Resources.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 namespace StuffToDo.API.Lib.Services
 {
     /// <summary>
-    /// USer service.
+    /// User service.
     /// </summary>
-    public interface IUserService
+    public interface IUsersService
     {
         /// <summary>
         /// Authenticates the user and returns an authentication token.
