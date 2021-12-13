@@ -1,10 +1,183 @@
 {
 	"info": {
-		"_postman_id": "4629c233-044f-4410-9390-f7a2c6535292",
+		"_postman_id": "aa0cc680-67e2-4f5a-a8ed-f5033a6b4163",
 		"name": "GimmeStuff",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
+		{
+			"name": "State",
+			"item": [
+				{
+					"name": "Reset",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwibmJmIjoxNjM5Mzk2NTYwLCJleHAiOjE2Mzk0MDAxNjAsImlhdCI6MTYzOTM5NjU2MH0.kLCkDJbzvzv_kPzwH4MdPZ6ecsm_E8QppZG-xUwhZ7s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"missionId\": 1,\n    \"title\": \"The second feature!\",\n    \"description\": \"As a user, I'd like to...\",\n    \"type\": 1,\n    \"state\": 1,\n    \"userAssignee\": 1,\n    \"userAuthor\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:50448/api/missions/1/state/reset",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "50448",
+							"path": [
+								"api",
+								"missions",
+								"1",
+								"state",
+								"reset"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Finish",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwibmJmIjoxNjM5Mzk2NTYwLCJleHAiOjE2Mzk0MDAxNjAsImlhdCI6MTYzOTM5NjU2MH0.kLCkDJbzvzv_kPzwH4MdPZ6ecsm_E8QppZG-xUwhZ7s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"missionId\": 1,\n    \"title\": \"The second feature!\",\n    \"description\": \"As a user, I'd like to...\",\n    \"type\": 1,\n    \"state\": 1,\n    \"userAssignee\": 1,\n    \"userAuthor\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:50448/api/missions/1/state/finish",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "50448",
+							"path": [
+								"api",
+								"missions",
+								"1",
+								"state",
+								"finish"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Next",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwibmJmIjoxNjM5Mzk2NTYwLCJleHAiOjE2Mzk0MDAxNjAsImlhdCI6MTYzOTM5NjU2MH0.kLCkDJbzvzv_kPzwH4MdPZ6ecsm_E8QppZG-xUwhZ7s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"missionId\": 1,\n    \"title\": \"The second feature!\",\n    \"description\": \"As a user, I'd like to...\",\n    \"type\": 1,\n    \"state\": 1,\n    \"userAssignee\": 1,\n    \"userAuthor\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:50448/api/missions/1/state/next",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "50448",
+							"path": [
+								"api",
+								"missions",
+								"1",
+								"state",
+								"next"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Previous",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwibmJmIjoxNjM5Mzk2NTYwLCJleHAiOjE2Mzk0MDAxNjAsImlhdCI6MTYzOTM5NjU2MH0.kLCkDJbzvzv_kPzwH4MdPZ6ecsm_E8QppZG-xUwhZ7s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"missionId\": 1,\n    \"title\": \"The second feature!\",\n    \"description\": \"As a user, I'd like to...\",\n    \"type\": 1,\n    \"state\": 1,\n    \"userAssignee\": 1,\n    \"userAuthor\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:50448/api/missions/1/state/previous",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "50448",
+							"path": [
+								"api",
+								"missions",
+								"1",
+								"state",
+								"previous"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
 		{
 			"name": "SignIn",
 			"request": {
@@ -20,12 +193,12 @@
 					}
 				},
 				"url": {
-					"raw": "https://localhost:5001/api/users/signin",
+					"raw": "https://localhost:50448/api/users/signin",
 					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "5001",
+					"port": "50448",
 					"path": [
 						"api",
 						"users",
@@ -63,12 +236,12 @@
 					}
 				},
 				"url": {
-					"raw": "https://localhost:5001/api/missions/1",
+					"raw": "https://localhost:50448/api/missions/1",
 					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "5001",
+					"port": "50448",
 					"path": [
 						"api",
 						"missions",
@@ -86,7 +259,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwibmJmIjoxNjM5MzU4OTg5LCJleHAiOjE2MzkzNjI1ODksImlhdCI6MTYzOTM1ODk4OX0.uP-NF_KtQa7BlAvqoCAXYddolQ41xrTdTk4lWl5dejk",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwibmJmIjoxNjM5MzkzMTk3LCJleHAiOjE2MzkzOTY3OTcsImlhdCI6MTYzOTM5MzE5N30.x8TdnBaaBZEA5etrN6KlvNwVp2f2JKiMxxzlbBW5h2c",
 							"type": "string"
 						}
 					]
@@ -103,16 +276,16 @@
 					}
 				},
 				"url": {
-					"raw": "https://localhost:5001/api/missions/1",
+					"raw": "https://localhost:50448/api/missions/4",
 					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "5001",
+					"port": "50448",
 					"path": [
 						"api",
 						"missions",
-						"1"
+						"4"
 					]
 				}
 			},
@@ -129,7 +302,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwibmJmIjoxNjM5MzU4OTg5LCJleHAiOjE2MzkzNjI1ODksImlhdCI6MTYzOTM1ODk4OX0.uP-NF_KtQa7BlAvqoCAXYddolQ41xrTdTk4lWl5dejk",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwibmJmIjoxNjM5Mzk2NTYwLCJleHAiOjE2Mzk0MDAxNjAsImlhdCI6MTYzOTM5NjU2MH0.kLCkDJbzvzv_kPzwH4MdPZ6ecsm_E8QppZG-xUwhZ7s",
 							"type": "string"
 						}
 					]
@@ -146,12 +319,12 @@
 					}
 				},
 				"url": {
-					"raw": "https://localhost:5001/api/missions",
+					"raw": "https://localhost:50448/api/missions",
 					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "5001",
+					"port": "50448",
 					"path": [
 						"api",
 						"missions"
@@ -185,15 +358,55 @@
 					}
 				},
 				"url": {
-					"raw": "https://localhost:5001/api/missions",
+					"raw": "https://localhost:50448/api/missions",
 					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "5001",
+					"port": "50448",
 					"path": [
 						"api",
 						"missions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Missions",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImFkbWluIiwibmJmIjoxNjM5MzkyNDY0LCJleHAiOjE2MzkzOTYwNjQsImlhdCI6MTYzOTM5MjQ2NH0.QzT7wOo2pKaBYLr43uvSKK1OZmXBXTfpU1NggaEc5o0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"missionId\": 1,\n    \"title\": \"The second feature!\",\n    \"description\": \"As a user, I'd like to...\",\n    \"type\": 1,\n    \"state\": 1,\n    \"userAssignee\": 1,\n    \"userAuthor\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:50448/api/missions/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "50448",
+					"path": [
+						"api",
+						"missions",
+						"1"
 					]
 				}
 			},
