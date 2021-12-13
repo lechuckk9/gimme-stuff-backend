@@ -148,31 +148,26 @@ namespace Missions.Common.API.Models
         [DataMember(IsRequired = false, EmitDefaultValue = false)]
         public Paging Page { get; set; }
         #endregion
+    }
+
+    /// <summary>
+    /// Class for paginated responses.
+    /// </summary>
+    public class Paging
+    {
+        /// <summary>
+        /// Current page number.
+        /// </summary>
+        public int Page { get; set; }
 
         /// <summary>
-        /// Class for paginated responses.
+        /// Current page's size.
         /// </summary>
-        public class Paging
-        {
-            /// <summary>
-            /// Count of returned items.
-            /// </summary>
-            public int Count { get; set; }
+        public int PageSize { get; set; }
 
-            /// <summary>
-            /// Total count of items.
-            /// </summary>
-            public int TotalCount { get; set; }
-
-            /// <summary>
-            /// Current page number.
-            /// </summary>
-            public int Page { get; set; }
-
-            /// <summary>
-            /// Current page's size.
-            /// </summary>
-            public int PageSize { get; set; }
-        }
+        /// <summary>
+        /// Total count of items.
+        /// </summary>
+        public int TotalCount { get; set; }
     }
 }

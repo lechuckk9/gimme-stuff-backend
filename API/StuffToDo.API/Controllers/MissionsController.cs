@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Missions.API.Mock.Shared.Data.Models;
 using Missions.Common.API.Models;
 using StuffToDo.API.Lib.Services;
+using StuffToDo.API.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -69,10 +70,38 @@ namespace StuffToDo.API.Controllers
         /// </summary>
         /// <returns>Authentication token</returns>
         /// <exception cref="UnauthorizedResult">Unauthorized</exception>
-        [HttpGet]
-        public async Task<ActionResult<Mission[]>> GetAllMissions()
+        [HttpGet("paged")]
+        public async Task<ActionResult<Mission[]>> GetAllMissionsNoPage()
         {
             return Ok(new ApiResponse<Mission[]>(await _missionService.ReadAll()));
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <returns>Authentication token</returns>
+        /// <exception cref="UnauthorizedResult">Unauthorized</exception>
+        [HttpGet]
+        public async Task<ActionResult<Mission[]>> GetAllMissions([FromQuery] PagedRequest pagedRequest)
+        {
+            var results = await _missionService.ReadAll();
+
+            // HACK do the paging on a lower level
+            List<Mission> resultsPaged = new(results);
+            resultsPaged = resultsPaged.Skip(pagedRequest.Page * pagedRequest.PageSize).Take(pagedRequest.PageSize).ToList();
+
+            return Ok
+            (
+                new ApiResponsePage<Mission>
+                (
+                    resultsPaged.ToArray(),
+                    new()
+                    {
+                        Page = pagedRequest.Page,
+                        PageSize = pagedRequest.PageSize,
+                        TotalCount = results.Length
+                    }
+                )
+            );
         }
 
         /// <summary>
