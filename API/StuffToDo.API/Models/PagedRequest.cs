@@ -13,10 +13,10 @@ namespace StuffToDo.API.Models
     public class PagedRequest
     {
         /// <summary>
-        /// Current page number. Default is 1.
+        /// Current page number. Starts from and defaults to 0.
         /// </summary>
         [DataMember(IsRequired = false)]
-        public int Page { get; set; } = 1;
+        public int Page { get; set; } = 0;
 
         /// <summary>
         /// Requested page size. Default is 10.
