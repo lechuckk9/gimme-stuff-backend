@@ -136,3 +136,6 @@ Users/Users.API.Tests/obj/project.nuget.cache
 Users/Users.API.Tests/obj/Users.API.Tests.csproj.nuget.dgspec.json
 Users/Users.API.Tests/obj/Users.API.Tests.csproj.nuget.g.props
 Users/Users.API.Tests/obj/Users.API.Tests.csproj.nuget.g.targets
+*.dll
+Commons/Missions.Common.API/obj/Debug/net5.0/Missions.Common.API.dll
+*.json

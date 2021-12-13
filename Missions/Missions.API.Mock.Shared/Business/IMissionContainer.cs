@@ -8,43 +8,69 @@ namespace Missions.API.Mock.Shared.Business
         /// <summary>
         /// Moves the Mission to <see cref="EStateType.New"/> state.
         /// </summary>
-        Task ResetMission();
+        Task<bool> ResetMission();
 
         /// <summary>
         /// Moves the Mission to <see cref="EStateType.Done"/> state.
         /// </summary>
-        Task FinishMission();
+        Task<bool> FinishMission();
 
         /// <summary>
         /// Moves the Mission to the appropriate <see cref="EStateType"/> state.
         /// </summary>
-        Task MoveToPreviousStep();
+        Task<bool> MoveToPreviousStep();
 
         /// <summary>
         /// Moves the Mission to the appropriate <see cref="EStateType"/> state.
         /// </summary>
-        Task MoveToNextStep();
+        Task<bool> MoveToNextStep();
 
         /// <summary>
         /// Creates a new Mission.
         /// </summary>
-        /// <param name="missionDbAdapter"></param>
+        /// <param name="mission"></param>
         /// <returns></returns>
         Task<bool> CreateNew(Mission mission);
 
         /// <summary>
-        /// Get a mission.
+        /// Gets a mission.
         /// </summary>
-        /// <param name="missionDbAdapter"></param>
         /// <param name="missionId"></param>
         /// <returns></returns>
         Task<Mission> Get(int missionId);
 
         /// <summary>
-        /// Get all missions.
+        /// Gets all missions.
         /// </summary>
-        /// <param name="missionDbAdapter"></param>
         /// <returns></returns>
         Task<Mission[]> GetAll();
+
+        /// <summary>
+        /// Deletes a mission.
+        /// </summary>
+        /// <param name="missionId"></param>
+        /// <returns></returns>
+        Task<bool> Delete(int missionId);
+
+        /// <summary>
+        /// Updates a new Mission.
+        /// </summary>
+        /// <param name="mission"></param>
+        /// <returns></returns>
+        Task<bool> Update(Mission mission);
+
+        /// <summary>
+        /// Sets the mission object to the container, by loading it from the database.
+        /// </summary>
+        /// <param name="missionId"></param>
+        /// <returns></returns>
+        void SetMission(int missionId);
+
+        /// <summary>
+        /// Sets the mission object to the container.
+        /// </summary>
+        /// <param name="mission"></param>
+        /// <returns></returns>
+        void SetMission(Mission mission);
     }
 }

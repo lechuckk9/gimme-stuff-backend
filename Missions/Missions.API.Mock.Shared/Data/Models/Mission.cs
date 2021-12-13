@@ -24,7 +24,7 @@ namespace Missions.API.Mock.Shared.Data.Models
         /// Task's type.
         /// </summary>
         [DataMember(IsRequired = true)]
-        public EMissionType Type { get; set; }
+        public EMissionType? Type { get; set; }
 
         /// <summary>
         /// Task's name.
@@ -42,7 +42,7 @@ namespace Missions.API.Mock.Shared.Data.Models
         /// Task's state.
         /// </summary>
         [DataMember(IsRequired = false)]
-        public EMissionStateType State { get; set; } = EMissionStateType.New;
+        public EMissionStateType? State { get; set; } = EMissionStateType.New;
 
         /// <summary>
         /// Task's assignee.

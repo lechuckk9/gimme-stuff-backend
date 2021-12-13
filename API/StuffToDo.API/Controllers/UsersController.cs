@@ -22,16 +22,6 @@ namespace StuffToDo.API.Controllers
         }
 
         /// <summary>
-        /// </summary>
-        /// <returns>Authentication token</returns>
-        /// <exception cref="UnauthorizedResult">Unauthorized</exception>
-        [HttpGet("fakeok")]
-        public ActionResult<string> FakeOk()
-        {
-            return Ok();
-        }
-
-        /// <summary>
         /// Authenticates the user and returns their authentication token.
         /// </summary>
         /// <param name="request">Username and password.</param>

@@ -15,52 +15,20 @@ namespace Missions.API.Mock.Shared.Business
     public sealed class MissionContainer : IMissionContainer
     {
         /// <summary>
+        /// Constructor for new missions.
+        /// </summary>
+        /// <param name="mission"></param>
+        public MissionContainer(IMissionsDbAdapter missionsDbAdapter) : this(new Mission(), missionsDbAdapter) { }
+
+        /// <summary>
         /// Constructor for existing missions.
         /// </summary>
         /// <param name="mission"></param>
-        public MissionContainer(Mission mission, IMissionsDbAdapter missionDbAdapter)
+        public MissionContainer(Mission mission, IMissionsDbAdapter missionsDbAdapter)
         {
-            _mission = mission;
-            _missionsDbAdapter = missionDbAdapter;
-            SetMissionState();
+            _missionsDbAdapter = missionsDbAdapter;
+            SetMission(mission);
         }
-
-        /// <inheritdoc/>
-        public MissionContainer(IMissionsDbAdapter missionDbAdapter) : this(new Mission(), missionDbAdapter) { }
-
-        /// <inheritdoc/>
-        public async Task ResetMission()
-        {
-            _mission.State = await _missionState.ResetMission();
-        }
-
-        /// <inheritdoc/>
-        public async Task FinishMission()
-        {
-            _mission.State = await _missionState.FinishMission();
-        }
-
-        /// <inheritdoc/>
-        public async Task MoveToPreviousStep()
-        {
-            _mission.State = await _missionState.MoveToPreviousStep();
-        }
-
-        /// <inheritdoc/>
-        public async Task MoveToNextStep()
-        {
-            _mission.State = await _missionState.MoveToNextStep();
-        }
-
-        /// <inheritdoc/>
-        public async Task<bool> CreateNew(Mission mission) => await _missionsDbAdapter.Create(mission);
-
-
-        /// <inheritdoc/>
-        public async Task<Mission> Get(int missionId) => await _missionsDbAdapter.Read(missionId);
-
-        /// <inheritdoc/>
-        public async Task<Mission[]> GetAll() => await _missionsDbAdapter.ReadAll();
 
         private void SetMissionState()
         {
@@ -73,6 +41,60 @@ namespace Missions.API.Mock.Shared.Business
                     _ => new NewMissionState(this),
                 };
             }
+        }
+
+
+        /// <inheritdoc/>
+        public async Task<bool> ResetMission()
+        {
+            return await _missionState.ResetMission();
+        }
+
+        /// <inheritdoc/>
+        public async Task<bool> FinishMission()
+        {
+            return await _missionState.FinishMission();
+        }
+
+        /// <inheritdoc/>
+        public async Task<bool> MoveToPreviousStep()
+        {
+            return await _missionState.MoveToPreviousStep();
+        }
+
+        /// <inheritdoc/>
+        public async Task<bool> MoveToNextStep()
+        {
+            return await _missionState.MoveToNextStep();
+        }
+
+        /// <inheritdoc/>
+        public async Task<bool> CreateNew(Mission mission) => await _missionsDbAdapter.Create(mission);
+
+        /// <inheritdoc/>
+        public async Task<Mission> Get(int missionId) => await _missionsDbAdapter.Read(missionId);
+
+        /// <inheritdoc/>
+        public async Task<Mission[]> GetAll() => await _missionsDbAdapter.ReadAll();
+
+        /// <inheritdoc/>
+        public async Task<bool> Delete(int missionId) => await _missionsDbAdapter.Delete(missionId);
+
+        /// <inheritdoc/>
+        public async Task<bool> Update(Mission mission) => await _missionsDbAdapter.Update(mission);
+
+        /// <inheritdoc/>
+        public async void SetMission(int missionId)
+        {
+            _mission = await Get(missionId);
+            SetMissionState();
+        }
+
+        /// <inheritdoc/>
+        public void SetMission(Mission mission)
+        {
+            _mission = mission;
+            SetMissionState();
         }
 
         #region Properies

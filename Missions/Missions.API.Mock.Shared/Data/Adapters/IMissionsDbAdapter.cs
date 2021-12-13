@@ -37,7 +37,7 @@ namespace Missions.API.Mock.Shared.Data.Adapters
         /// </summary>
         /// <param name="mission"></param>
         /// <returns></returns>
-        Task<Mission> Update(Mission mission);
+        Task<bool> Update(Mission mission);
 
         /// <summary>
         /// Deletes a mission.

@@ -29,14 +29,6 @@ namespace StuffToDo.API.Controllers
         [HttpPost]
         public async Task<ActionResult<bool>> AddMission(Mission mission)
         {
-            // TODO validate token
-            //var token = await _usersService.SignIn(request);
-
-            //if (token.Failed)
-            //{
-            //    return Unauthorized(new ApiResponse<string>(token));
-            //}
-
             return Ok(new ApiResponse<bool>(await _missionService.Create(mission)));
         }
 
@@ -46,10 +38,10 @@ namespace StuffToDo.API.Controllers
         /// <returns>Authentication token</returns>
         /// <exception cref="UnauthorizedResult">Unauthorized</exception>
         [HttpPut("{missionId}")]
-        public async Task<ActionResult<Mission>> UpdateMission(int missionId, Mission mission)
+        public async Task<ActionResult<bool>> UpdateMission(int missionId, Mission mission)
         {
             mission.MissionId = missionId;
-            return Ok(new ApiResponse<Mission>(await _missionService.Update(mission)));
+            return Ok(new ApiResponse<bool>(await _missionService.Update(mission)));
         }
 
         /// <summary>
@@ -81,6 +73,50 @@ namespace StuffToDo.API.Controllers
         public async Task<ActionResult<Mission[]>> GetAllMissions()
         {
             return Ok(new ApiResponse<Mission[]>(await _missionService.ReadAll()));
+        }
+
+        /// <summary>
+        /// Changes the mission's state.
+        /// </summary>
+        /// <returns>Authentication token</returns>
+        /// <exception cref="UnauthorizedResult">Unauthorized</exception>
+        [HttpPatch("{missionId}/state/reset")]
+        public async Task<ActionResult<bool>> ResetMission(int missionId)
+        {
+            return Ok(new ApiResponse<bool>(await _missionService.ResetMission(missionId)));
+        }
+
+        /// <summary>
+        /// Changes the mission's state.
+        /// </summary>
+        /// <returns>Authentication token</returns>
+        /// <exception cref="UnauthorizedResult">Unauthorized</exception>
+        [HttpPatch("{missionId}/state/finish")]
+        public async Task<ActionResult<bool>> FinishMission(int missionId)
+        {
+            return Ok(new ApiResponse<bool>(await _missionService.FinishMission(missionId)));
+        }
+
+        /// <summary>
+        /// Changes the mission's state.
+        /// </summary>
+        /// <returns>Authentication token</returns>
+        /// <exception cref="UnauthorizedResult">Unauthorized</exception>
+        [HttpPatch("{missionId}/state/next")]
+        public async Task<ActionResult<bool>> MoveToNextStep(int missionId)
+        {
+            return Ok(new ApiResponse<bool>(await _missionService.MoveToNextStep(missionId)));
+        }
+
+        /// <summary>
+        /// Changes the mission's state.
+        /// </summary>
+        /// <returns>Authentication token</returns>
+        /// <exception cref="UnauthorizedResult">Unauthorized</exception>
+        [HttpPatch("{missionId}/state/previous")]
+        public async Task<ActionResult<bool>> MoveToPreviousStep(int missionId)
+        {
+            return Ok(new ApiResponse<bool>(await _missionService.MoveToPreviousStep(missionId)));
         }
 
         #region Services

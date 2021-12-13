@@ -137,7 +137,7 @@ namespace Missions.Common.Lib.Data.Adapters
 
         #region Fields
         // HACK load from appSettings
-        const string _ConnectionString = "Server=N1NWPLSK12SQL-v03.shr.prod.ams1.secureserver.net;Database=stuff_to_do;user id=todoadmin;password=odoffutsfoTolA12";
+        const string _ConnectionString = "Server=188.121.44.217;Database=stuff_to_do;user id=todoadmin;password=odoffutsfoTolA12;persist security info=True;";
         #endregion
     }
 }

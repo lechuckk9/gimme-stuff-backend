@@ -56,58 +56,58 @@ VALUES (@Title, @Description, @Type, @State, @UserAssignee, @UserAuthor)
         }
 
         /// <inheritdoc/>
-        async Task<Mission> IMissionsDbAdapter.Update(Mission mission)
+        async Task<bool> IMissionsDbAdapter.Update(Mission mission)
         {
             string updateSql = string.Empty;
             var dbParams = new DynamicParameters();
             if (!string.IsNullOrEmpty(mission.Title))
             {
                 dbParams.Add("Title", mission.Title, DbType.String);
-                updateSql += "Title=@Title";
+                updateSql += "Title=@Title,";
             }
 
-            if (!string.IsNullOrEmpty(mission.Title))
+            if (!string.IsNullOrEmpty(mission.Description))
             {
                 dbParams.Add("Description", mission.Description, DbType.String);
-                updateSql += "Description=@Description";
+                updateSql += "Description=@Description,";
             }
 
-            if (!string.IsNullOrEmpty(mission.Title))
+            if (mission.Type.HasValue)
             {
                 dbParams.Add("Type", mission.Type, DbType.Int32);
-                updateSql += "Type=@Type";
+                updateSql += "Type=@Type,";
             }
 
-            if (!string.IsNullOrEmpty(mission.Title))
+            if (mission.State.HasValue)
             {
                 dbParams.Add("State", mission.State, DbType.Int32);
-                updateSql += "State=@State";
+                updateSql += "State=@State,";
             }
 
-            if (!string.IsNullOrEmpty(mission.Title))
+            if (mission.UserAssignee.HasValue)
             {
-                dbParams.Add("UserAsignee", mission.UserAssignee, DbType.Int32);
-                updateSql += "UserAsignee=@UserAsignee";
+                dbParams.Add("UserAssignee", mission.UserAssignee, DbType.Int32);
+                updateSql += "UserAssignee=@UserAssignee,";
             }
 
-            if (!string.IsNullOrEmpty(mission.Title))
+            if (mission.UserAuthor.HasValue)
             {
                 dbParams.Add("UserAuthor", mission.UserAuthor, DbType.Int32);
-                updateSql += "UserAuthor=@UserAuthor";
+                updateSql += "UserAuthor=@UserAuthor,";
             }
 
             if (string.IsNullOrEmpty(updateSql))
             {
-                return null;
+                return false;
             }
 
             string command = $@"
-UPDATE INTO Mission SET {updateSql}
+UPDATE Mission SET {updateSql.Remove(updateSql.Length - 1)}
 WHERE MissionId = {mission.MissionId}
 ";
 
-            var result = await Task.FromResult(_baseDbAdapter.Insert(command, dbParams, commandType: CommandType.Text));
-            return result ? mission : null;
+            var result = await Task.FromResult(_baseDbAdapter.Update(command, dbParams, commandType: CommandType.Text));
+            return result;
         }
 
         /// <inheritdoc/>

@@ -18,25 +18,25 @@ namespace Missions.API.Mock.Shared.States
         /// Moves the Mission to <see cref="EStateType.New"/> state.
         /// </summary>
         /// <returns>New <see cref="EStateType"/> state.</returns>
-        public abstract Task<EMissionStateType> ResetMission();
+        public abstract Task<bool> ResetMission();
 
         /// <summary>
         /// Moves the Mission to <see cref="EStateType.Done"/> state.
         /// </summary>
         /// <returns>New <see cref="EStateType"/> state.</returns>
-        public abstract Task<EMissionStateType> FinishMission();
+        public abstract Task<bool> FinishMission();
 
         /// <summary>
         /// Moves the Mission to the appropriate <see cref="EStateType"/> state.
         /// </summary>
         /// <returns>New <see cref="EStateType"/> state.</returns>
-        public abstract Task<EMissionStateType> MoveToPreviousStep();
+        public abstract Task<bool> MoveToPreviousStep();
 
         /// <summary>
         /// Moves the Mission to the appropriate <see cref="EStateType"/> state.
         /// </summary>
         /// <returns>New <see cref="EStateType"/> state.</returns>
-        public abstract Task<EMissionStateType> MoveToNextStep();
+        public abstract Task<bool> MoveToNextStep();
 
         #region Fields
         protected MissionContainer _missionContainer;

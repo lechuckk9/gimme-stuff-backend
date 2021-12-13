@@ -13,33 +13,29 @@ namespace Missions.API.Mock.Shared.States
         public NewMissionState(MissionContainer missionContainer) : base(missionContainer) { }
 
         /// <inheritdoc/>
-        public override async Task<EMissionStateType> FinishMission()
+        public override async Task<bool> FinishMission()
         {
             _missionContainer.Mission.State = EMissionStateType.Done;
-            await _missionContainer._missionsDbAdapter.Update(_missionContainer.Mission);
-
-            return _missionContainer.Mission.State;
+            return await _missionContainer._missionsDbAdapter.Update(_missionContainer.Mission);
         }
 
         /// <inheritdoc/>
-        public override async Task<EMissionStateType> MoveToNextStep()
+        public override async Task<bool> MoveToNextStep()
         {
             _missionContainer.Mission.State = EMissionStateType.InProgress;
-            await _missionContainer._missionsDbAdapter.Update(_missionContainer.Mission);
-
-            return _missionContainer.Mission.State;
+            return await _missionContainer._missionsDbAdapter.Update(_missionContainer.Mission);
         }
 
         /// <inheritdoc/>
-        public override async Task<EMissionStateType> MoveToPreviousStep()
+        public override async Task<bool> MoveToPreviousStep()
         {
-            return await Task.FromResult(_missionContainer.Mission.State);
+            return await Task.FromResult(false);
         }
 
         /// <inheritdoc/>
-        public override async Task<EMissionStateType> ResetMission()
+        public override async Task<bool> ResetMission()
         {
-            return await Task.FromResult(_missionContainer.Mission.State);
+            return await Task.FromResult(false);
         }
     }
 }

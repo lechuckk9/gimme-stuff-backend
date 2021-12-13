@@ -35,13 +35,41 @@ namespace StuffToDo.API.Lib.Services
         /// </summary>
         /// <param name="mission"></param>
         /// <returns></returns>
-        public Task<Mission> Update(Mission mission);
+        public Task<bool> Update(Mission mission);
 
         /// <summary>
         /// Deletes a mission.
         /// </summary>
-        /// <param name="mission"></param>
+        /// <param name="missionId"></param>
         /// <returns></returns>
         public Task<bool> Delete(int missionId);
+
+        /// <summary>
+        /// Moves the Mission to <see cref="EStateType.New"/> state.
+        /// </summary>
+        /// <param name="missionId"></param>
+        /// <returns></returns>
+        Task<bool> ResetMission(int missionId);
+
+        /// <summary>
+        /// Moves the Mission to <see cref="EStateType.Done"/> state.
+        /// </summary>
+        /// <param name="missionId"></param>
+        /// <returns></returns>
+        Task<bool> FinishMission(int missionId);
+
+        /// <summary>
+        /// Moves the Mission to the appropriate <see cref="EStateType"/> state.
+        /// </summary>
+        /// <param name="missionId"></param>
+        /// <returns></returns>
+        Task<bool> MoveToPreviousStep(int missionId);
+
+        /// <summary>
+        /// Moves the Mission to the appropriate <see cref="EStateType"/> state.
+        /// </summary>
+        /// <param name="missionId"></param>
+        /// <returns></returns>
+        Task<bool> MoveToNextStep(int missionId);
     }
 }

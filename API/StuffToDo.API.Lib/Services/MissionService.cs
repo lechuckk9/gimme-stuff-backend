@@ -12,29 +12,62 @@ namespace StuffToDo.API.Lib.Services
             _missionContainer = missionContainer;
         }
 
+        /// <inheritdoc/>
         public async Task<bool> Create(Mission mission)
         {
             return await _missionContainer.CreateNew(mission);
         }
 
+        /// <inheritdoc/>
         public async Task<bool> Delete(int missionId)
         {
-            throw new NotImplementedException();
+            return await _missionContainer.Delete(missionId);
         }
 
+        /// <inheritdoc/>
         public async Task<Mission> Read(int missionId)
         {
             return await _missionContainer.Get(missionId);
         }
 
+        /// <inheritdoc/>
         public async Task<Mission[]> ReadAll()
         {
             return await _missionContainer.GetAll();
         }
 
-        public async Task<Mission> Update(Mission mission)
+        /// <inheritdoc/>
+        public async Task<bool> Update(Mission mission)
         {
-            throw new NotImplementedException();
+            return await _missionContainer.Update(mission);
+        }
+
+        /// <inheritdoc/>
+        public async Task<bool> ResetMission(int missionId)
+        {
+            _missionContainer.SetMission(missionId);
+            return await _missionContainer.ResetMission();
+        }
+
+        /// <inheritdoc/>
+        public async Task<bool> FinishMission(int missionId)
+        {
+            _missionContainer.SetMission(missionId);
+            return await _missionContainer.FinishMission();
+        }
+
+        /// <inheritdoc/>
+        public async Task<bool> MoveToPreviousStep(int missionId)
+        {
+            _missionContainer.SetMission(missionId);
+            return await _missionContainer.MoveToPreviousStep();
+        }
+
+        /// <inheritdoc/>
+        public async Task<bool> MoveToNextStep(int missionId)
+        {
+            _missionContainer.SetMission(missionId);
+            return await _missionContainer.MoveToNextStep();
         }
 
         #region Fields
