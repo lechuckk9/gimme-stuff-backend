@@ -28,7 +28,7 @@ namespace StuffToDo.API.Controllers
         /// <returns>Authentication token</returns>
         /// <exception cref="UnauthorizedResult">Unauthorized</exception>
         [HttpPost]
-        public async Task<ActionResult<bool>> AddMission(Mission mission)
+        public async Task<ActionResult<bool>> AddMission([FromBody] Mission mission)
         {
             return Ok(new ApiResponse<bool>(await _missionService.Create(mission)));
         }
@@ -39,7 +39,7 @@ namespace StuffToDo.API.Controllers
         /// <returns>Authentication token</returns>
         /// <exception cref="UnauthorizedResult">Unauthorized</exception>
         [HttpPut("{missionId}")]
-        public async Task<ActionResult<bool>> UpdateMission(int missionId, Mission mission)
+        public async Task<ActionResult<bool>> UpdateMission([FromRoute] int missionId,[FromBody] Mission mission)
         {
             mission.MissionId = missionId;
             return Ok(new ApiResponse<bool>(await _missionService.Update(mission)));
@@ -51,7 +51,7 @@ namespace StuffToDo.API.Controllers
         /// <returns>Authentication token</returns>
         /// <exception cref="UnauthorizedResult">Unauthorized</exception>
         [HttpDelete("{missionId}")]
-        public async Task<ActionResult<bool>> DeleteMission(int missionId)
+        public async Task<ActionResult<bool>> DeleteMission([FromRoute] int missionId)
         {
             return Ok(new ApiResponse<bool>(await _missionService.Delete(missionId)));
         }
@@ -61,7 +61,7 @@ namespace StuffToDo.API.Controllers
         /// <returns>Authentication token</returns>
         /// <exception cref="UnauthorizedResult">Unauthorized</exception>
         [HttpGet("{missionId}")]
-        public async Task<ActionResult<Mission>> GetAllMissions(int missionId)
+        public async Task<ActionResult<Mission>> GetAllMissions([FromRoute] int missionId)
         {
             return Ok(new ApiResponse<Mission>(await _missionService.Read(missionId)));
         }
@@ -100,7 +100,7 @@ namespace StuffToDo.API.Controllers
         /// <returns>Authentication token</returns>
         /// <exception cref="UnauthorizedResult">Unauthorized</exception>
         [HttpPatch("{missionId}/state/reset")]
-        public async Task<ActionResult<bool>> ResetMission(int missionId)
+        public async Task<ActionResult<bool>> ResetMission([FromRoute] int missionId)
         {
             return Ok(new ApiResponse<bool>(await _missionService.ResetMission(missionId)));
         }
@@ -111,7 +111,7 @@ namespace StuffToDo.API.Controllers
         /// <returns>Authentication token</returns>
         /// <exception cref="UnauthorizedResult">Unauthorized</exception>
         [HttpPatch("{missionId}/state/finish")]
-        public async Task<ActionResult<bool>> FinishMission(int missionId)
+        public async Task<ActionResult<bool>> FinishMission([FromRoute] int missionId)
         {
             return Ok(new ApiResponse<bool>(await _missionService.FinishMission(missionId)));
         }
@@ -122,7 +122,7 @@ namespace StuffToDo.API.Controllers
         /// <returns>Authentication token</returns>
         /// <exception cref="UnauthorizedResult">Unauthorized</exception>
         [HttpPatch("{missionId}/state/next")]
-        public async Task<ActionResult<bool>> MoveToNextStep(int missionId)
+        public async Task<ActionResult<bool>> MoveToNextStep([FromRoute] int missionId)
         {
             return Ok(new ApiResponse<bool>(await _missionService.MoveToNextStep(missionId)));
         }
@@ -133,7 +133,7 @@ namespace StuffToDo.API.Controllers
         /// <returns>Authentication token</returns>
         /// <exception cref="UnauthorizedResult">Unauthorized</exception>
         [HttpPatch("{missionId}/state/previous")]
-        public async Task<ActionResult<bool>> MoveToPreviousStep(int missionId)
+        public async Task<ActionResult<bool>> MoveToPreviousStep([FromRoute] int missionId)
         {
             return Ok(new ApiResponse<bool>(await _missionService.MoveToPreviousStep(missionId)));
         }
